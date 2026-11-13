@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "frame"
+version = "0.1.0"
+description = "A tiny macOS menu-bar app that outlines the focused window."
+requires-python = ">=3.10"
+
+[dependency-groups]
+app = [
+    "pyobjc-framework-ApplicationServices>=12.2; sys_platform == 'darwin'",
+    "pyobjc-framework-Cocoa>=12.2; sys_platform == 'darwin'",
+    "pyobjc-framework-Quartz>=12.2; sys_platform == 'darwin'",
+]
+build = ["py2app==0.28.10"]
+
+[tool.uv]
+default-groups = ["app"]
+
+[tool.setuptools.packages.find]
+include = ["frame*"]
+
+[tool.ruff]
+extend-exclude = ["build", "dist"]
+
+[tool.ruff.lint]
+extend-select = ["I", "BLE"]
+
+[tool.ty.environment]
+python = ".venv"
+extra-paths = ["typings"]
+
+[tool.ty.src]
+exclude = ["build", "dist"]
