@@ -6,6 +6,10 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
 </p>
 
+<p align="center">
+  <img src="README.png" alt="Frame screenshot">
+</p>
+
 ## Setup
 
 Requires macOS 13+, [uv](https://docs.astral.sh/uv/), and Python 3.12 ([python.org](https://www.python.org/downloads/macos/) or `brew install python@3.12`).
